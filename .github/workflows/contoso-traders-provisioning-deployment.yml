@@ -277,7 +277,6 @@ jobs:
       - name: Download and install azcopy 10.13.0
         run: |
         wget https://azcopyvnext-awgzd8g7aagqhzhe.b02.azurefd.net/release20211027/azcopy_linux_amd64_10.13.0.tar.gz | tar -xz
-        azcopy --version
       - name: deploy to storage
         uses: azure/CLI@v1
         with:
