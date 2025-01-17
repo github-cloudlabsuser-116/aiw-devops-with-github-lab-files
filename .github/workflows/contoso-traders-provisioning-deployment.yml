@@ -273,6 +273,12 @@ jobs:
       - name: npm run build
         run: npm run build
         working-directory: src/ContosoTraders.Ui.Website
+        steps:
+      - name: Download and install azcopy 10.13.0
+        run: |
+        curl -sL https://aka.ms/downloadazcopy-v10-linux | tar -xz
+        sudo mv ./azcopy*/azcopy /usr/local/bin/azcopy
+        azcopy --version
       - name: deploy to storage
         uses: azure/CLI@v1
         with:
